@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message_icon {
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 45px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 3;
+    transition: right 0.4s cubic-bezier(0.5, 1.8, 0.8, 1);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.message_icon--hidden {
+    right: -50px;
+}
+
+
+.message_icon::after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: 50%;
+    height: 50%;
+    left: 10%;
+    bottom: 10%;
+    transform: skew(-20deg, -20deg);
+    z-index: -1;
+}
+
+.message_icon:hover {
+    background-color: green;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    /* padding: 10px; */
+    top: 30px;
+    right: 30px;
+    width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+    /* min-width: 300px; */
+    background-color: lightgray;
+    border-radius: 10px;
+    height: auto;
+    /* min-height: 150px; */
+    /* box-sizing: content-box; */
+    /* border-top: 50px solid rgb(62, 62, 238); */
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.news--hidden {
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+.news__container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 250px;
+    overflow-y: scroll;
+}
+
+.news__title {
+    display: block;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    background: rgb(33, 98, 194);
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    /* top: -50px; */
+    /* left: 20px; */
+    /* position: absolute; */
+    color: #ffffff;
+    text-transform: uppercase;
+    /* text-align: center; */
+    font-size: 20px;
+}
+
+.news__close_btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+    top: 10px;
+    border: none;
+    outline: none;
+}
+
+.news__close_btn::before,
+.news__close_btn::after {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #000;
+}
+
+.news__close_btn::before {
+    transform: rotate(45deg);
+}
+
+.news__close_btn::after {
+    transform: rotate(-45deg);
+}
+
+.news__close_btn:hover::before,
+.news__close_btn:hover::after {
+    background-color: #fff;
+}
+
+.news__new {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    min-height: 100px;
+    border-top: 25px solid rgb(127, 174, 218);
+    border-bottom: 25px solid rgb(134, 162, 189);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.news__new--not-read {
+    border-top: 25px solid rgb(35, 77, 214);
+}
+
+.news__new--not-read::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -18px;
+    right: 10px;
+    background-color: rgb(21, 204, 21);
+    box-shadow: 0 0 3px 1px #ffffff;
+    border-radius: 50%;
+}
+
+.news__new:hover {
+    box-shadow: 0 0 10px 5px rgb(107, 180, 170);
+}
+
+.news__mew_title {
+    position: absolute;
+    color: #ffffff;
+    top: -22px;
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+}
+
+.news__mew_text {
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    flex-grow: 1;
+}
+.news__new_time-author-wrpr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: -22px;
+}
+.news__new_author {
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    
+}
+.news__new_time {
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    
+}
+.news__new_link {
+    font-family: 'Lucida Grande', 'Lucida Sans', sans-serif;
+    width: auto;
+}
