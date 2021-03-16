@@ -141,6 +141,7 @@ function renderMessage(data) {
     newTime.textContent = data.date;
     newLink.textContent = 'Подробнее...'
     newLink.setAttribute('href', data.link);
+    newLink.setAttribute('target', '__blank');
 
     newTimeAuthorWrpr.append(newAuthor);
     newTimeAuthorWrpr.append(newTime);
